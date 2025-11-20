@@ -1,4 +1,4 @@
-function NotFound() {
+function PageNotFound() {
   return (
     <div className="error-container">
       <h1> 404 </h1>
@@ -8,4 +8,4 @@ function NotFound() {
   );
 }
 
-export { NotFound };
+export { PageNotFound };
