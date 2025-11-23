@@ -9,11 +9,14 @@ import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { AppRoute, AuthorizationStatus } from "../../const";
 import { PrivateRoute } from "../private-route/private-route";
+import { FullOffer } from "../../types/offer";
 
 type AppMainPageProps = {
   rentalOffersCount: number;
+  offers: FullOffer[];
 };
-function App({ rentalOffersCount }: AppMainPageProps): JSX.Element {
+
+function App({ rentalOffersCount, offers }: AppMainPageProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
