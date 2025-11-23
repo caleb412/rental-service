@@ -7,7 +7,8 @@ import { PageNotFound } from "../../pages/not-found-page/not-found";
 import { BrowserRouter } from "react-router-dom";
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
-import { AppRoute } from "../../const";
+import { AppRoute, AuthorizationStatus } from "../../const";
+import { PrivateRoute } from "../private-route/private-route";
 
 type AppMainPageProps = {
   rentalOffersCount: number;
@@ -20,7 +21,14 @@ function App({ rentalOffersCount }: AppMainPageProps): JSX.Element {
           path={AppRoute.Main}
           element={<MainPage rentalOffersCount={rentalOffersCount} />}
         />
-        <Route path={AppRoute.Favorites} element={<FavoritesPage />} />
+        <Route
+          path={AppRoute.Favorites}
+          element={
+            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+              <FavoritesPage />
+            </PrivateRoute>
+          }
+        />
         <Route path={AppRoute.Login} element={<LoginPage />} />
         <Route path={AppRoute.Offer} element={<OfferPage />} />
         <Route path={"*"} element={<PageNotFound />} />
