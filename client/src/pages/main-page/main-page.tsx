@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import { CitiesCard } from "../../components/cities-card";
+import { CitiesCard } from "../../components/cities-card/cities-card";
 
 type MainPageProps = {
   rentalOffersCount: number;

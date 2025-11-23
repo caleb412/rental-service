@@ -1,3 +1,4 @@
+import { Logo } from "../../components/logo/logo";
 function FavoritesPage() {
   return (
     <div className="page">
@@ -6,13 +7,7 @@ function FavoritesPage() {
           <div className="header__wrapper">
             <div className="header__left">
               <a className="header__logo-link" href="main.html">
-                <img
-                  className="header__logo"
-                  src="img/logo.svg"
-                  alt="Rent se/rvice logo"
-                  width="81"
-                  height="41"
-                />
+                <Logo />
               </a>
             </div>
             <nav className="header__nav">
