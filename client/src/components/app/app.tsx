@@ -10,19 +10,30 @@ import { Routes } from "react-router-dom";
 import { AppRoute, AuthorizationStatus } from "../../const";
 import { PrivateRoute } from "../private-route/private-route";
 import { FullOffer } from "../../types/offer";
+import { OffersList } from "../../types/offer";
 
 type AppMainPageProps = {
   rentalOffersCount: number;
+  offersList: OffersList[];
   offers: FullOffer[];
 };
 
-function App({ rentalOffersCount, offers }: AppMainPageProps): JSX.Element {
+function App({
+  rentalOffersCount,
+  offersList,
+  offers,
+}: AppMainPageProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<MainPage rentalOffersCount={rentalOffersCount} />}
+          element={
+            <MainPage
+              rentalOffersCount={rentalOffersCount}
+              offersList={offersList}
+            />
+          }
         />
         <Route
           path={AppRoute.Favorites}

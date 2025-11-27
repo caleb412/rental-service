@@ -6,13 +6,13 @@ export const offersList: OffersList[] = [
     title: "Cozy Apartment",
     type: "apartment",
     price: 370,
-    previewImage: "cozy-room.jpg",
+    previewImage: "../public/img/apartment-01.jpg",
     city: {
       name: "Paris",
       location: {
         latitude: 48.85661,
         longitude: 2.342499,
-        zoom: 16,
+        zoom: 13,
       },
     },
     location: {
