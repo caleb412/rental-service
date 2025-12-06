@@ -1,20 +1,25 @@
 import { FullOffer } from "../../types/offer";
 import { Logo } from "../../components/logo/logo";
+import { useParams } from "react-router-dom";
+import { PageNotFound } from "../not-found-page/not-found";
 
 type OfferProps = {
-  offer: FullOffer;
+  offers: FullOffer[];
 };
 
-function OfferPage({ offer }: OfferProps) {
+function OfferPage({ offers }: OfferProps) {
+  const params = useParams();
+  const offer = offers.find((item) => item.id === params.id);
+  if (!offer) {
+    return <PageNotFound />;
+  }
   return (
     <div className="page">
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <a className="header__logo-link" href="main.html">
-                <Logo />
-              </a>
+              <Logo />
             </div>
 
             <nav className="header__nav">
@@ -135,7 +140,7 @@ function OfferPage({ offer }: OfferProps) {
                     <div className="reviews__avatar-wrapper user__avatar-wrapper">
                       <img
                         className="reviews__avatar user__avatar"
-                        src="img/avatar-max.jpg"
+                        src="/img/avatar-max.jpg"
                         width="54"
                         height="54"
                         alt="Reviews avatar"
@@ -289,7 +294,7 @@ function OfferPage({ offer }: OfferProps) {
                   <a href="#">
                     <img
                       className="place-card__image"
-                      src="img/room.jpg"
+                      src="/img/room.jpg"
                       width="260"
                       height="200"
                       alt="Place image"
@@ -336,7 +341,7 @@ function OfferPage({ offer }: OfferProps) {
                   <a href="#">
                     <img
                       className="place-card__image"
-                      src="img/apartment-02.jpg"
+                      src="/img/apartment-02.jpg"
                       width="260"
                       height="200"
                       alt="Place image"
@@ -386,7 +391,7 @@ function OfferPage({ offer }: OfferProps) {
                   <a href="#">
                     <img
                       className="place-card__image"
-                      src="img/apartment-03.jpg"
+                      src="/img/apartment-03.jpg"
                       width="260"
                       height="200"
                       alt="Place image"

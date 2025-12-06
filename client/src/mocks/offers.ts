@@ -9,12 +9,12 @@ const offers: FullOffer[] = [
     type: "apartment",
     price: 370,
     images: [
-      "cozy-room.jpg",
-      "cozy-bathroom.jpg",
-      "cozy-bedroom.jpg",
-      "studio-01.jpg",
-      "room.jpg",
-      "apartment-01.jpg",
+      "/img/cozy-room.jpg",
+      "/img/cozy-bathroom.jpg",
+      "/img/cozy-bedroom.jpg",
+      "/img/studio-01.jpg",
+      "/img/loft-apartment.jpg",
+      "/img/apartment-01.jpg",
     ],
     city: {
       name: "Paris",
@@ -47,7 +47,7 @@ const offers: FullOffer[] = [
     host: {
       isPro: true,
       name: "Angelina",
-      avatarUrl: "avatar-angelina.jpg",
+      avatarUrl: "/img/avatar-angelina.jpg",
     },
     isPremium: false,
     isFavorite: true,
@@ -63,7 +63,11 @@ const offers: FullOffer[] = [
       "Overlooking the city. Two floors of comfort. Perfect for lovers",
     type: "apartment",
     price: 500,
-    images: ["balcony-apartment.jpg", "apartment-01.jpg", "apartment-02.jpg"],
+    images: [
+      "/img/balcony-apartment.jpg",
+      "/img/apartment-01.jpg",
+      "/img/apartment-02.jpg",
+    ],
     city: {
       name: "Cologne",
       location: {
@@ -94,7 +98,7 @@ const offers: FullOffer[] = [
     host: {
       isPro: true,
       name: "Olya",
-      avatarUrl: "avatar-angelina.jpg",
+      avatarUrl: "/img/avatar-angelina.jpg",
     },
     isPremium: false,
     isFavorite: true,
@@ -110,7 +114,11 @@ const offers: FullOffer[] = [
       "A perfect apartment. Two floors, convenient living. Perfect for bachelors",
     type: "apartment",
     price: 380,
-    images: ["basement-apartment.jpg", "cozy-bathroom.jpg", "cozy-bedroom.jpg"],
+    images: [
+      "/img/basement-apartment.jpg",
+      "/img/cozy-bathroom.jpg",
+      "/img/cozy-bedroom.jpg",
+    ],
     city: {
       name: "Brussels",
       location: {

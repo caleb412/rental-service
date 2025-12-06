@@ -9,19 +9,21 @@ import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { AppRoute, AuthorizationStatus } from "../../const";
 import { PrivateRoute } from "../private-route/private-route";
-import { FullOffer } from "../../types/offer";
+import { FavoriteOffer, FullOffer } from "../../types/offer";
 import { OffersList } from "../../types/offer";
 
 type AppMainPageProps = {
   rentalOffersCount: number;
   offersList: OffersList[];
   offers: FullOffer[];
+  favorites: FavoriteOffer[];
 };
 
 function App({
   rentalOffersCount,
   offersList,
   offers,
+  favorites,
 }: AppMainPageProps): JSX.Element {
   return (
     <BrowserRouter>
@@ -39,12 +41,15 @@ function App({
           path={AppRoute.Favorites}
           element={
             <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-              <FavoritesPage />
+              <FavoritesPage favorites={favorites} />
             </PrivateRoute>
           }
         />
         <Route path={AppRoute.Login} element={<LoginPage />} />
-        <Route path={AppRoute.Offer} element={<OfferPage />} />
+        <Route
+          path={`${AppRoute.Offer}/:id`}
+          element={<OfferPage offers={offers} />}
+        />
         <Route path={"*"} element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

@@ -45,3 +45,15 @@ export type OffersList = {
   rating: number;
   previewImage: string;
 };
+
+export type FavoriteOffer = {
+  id: string;
+  title: string;
+  type: string;
+  price: number;
+  isPremium: boolean;
+  image: string;
+  rating: number;
+  city: string;
+  isFavorite?: boolean;
+};
