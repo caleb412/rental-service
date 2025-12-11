@@ -19,14 +19,14 @@ const offers: FullOffer[] = [
     city: {
       name: "Paris",
       location: {
-        latitude: 48.85661,
-        longitude: 2.342499,
+        latitude: 52.3909553943508,
+        longitude: 4.85309666406198,
         zoom: 16,
       },
     },
     location: {
-      latitude: 48.86861000000004,
-      longitude: 2.342499,
+      latitude: 52.3609553943508,
+      longitude: 4.85309666406198,
       zoom: 16,
     },
     goods: [
@@ -71,14 +71,14 @@ const offers: FullOffer[] = [
     city: {
       name: "Cologne",
       location: {
-        latitude: 50.9375,
-        longitude: 6.9603,
+        latitude: 52.3909553943508,
+        longitude: 4.929309666406198,
         zoom: 16,
       },
     },
     location: {
-      latitude: 50.937498,
-      longitude: 6.9603091,
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
       zoom: 16,
     },
     goods: [
