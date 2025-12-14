@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import "./map.css";
 type Location = {
   latitude: number;
   longitude: number;
@@ -25,7 +26,7 @@ type MapProps = {
 
 const createIcon = (isActive: boolean = false) => {
   // Use your local pin.svg and pin-active.svg files
-  const iconUrl = isActive ? "img/pin-active.svg" : "img/pin.svg";
+  const iconUrl = isActive ? "/img/pin-active.svg" : "/img/pin.svg";
 
   return L.icon({
     iconUrl: iconUrl,

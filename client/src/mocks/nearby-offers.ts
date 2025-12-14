@@ -1,0 +1,73 @@
+import { OffersList } from "../types/offer";
+
+export const mockNearbyOffers: OffersList[] = [
+  {
+    id: "nearby-1",
+    title: "Wood and stone place",
+    type: "Private room",
+    price: 80,
+    city: {
+      name: "Amsterdam",
+      location: {
+        latitude: 52.3609553943508,
+        longitude: 4.85309666406198,
+        zoom: 16,
+      },
+    },
+    location: {
+      latitude: 52.3609553943508,
+      longitude: 4.85309666406198,
+      zoom: 16,
+    },
+    isFavorite: true,
+    isPremium: false,
+    rating: 4.2,
+    previewImage: "/img/room.jpg",
+  },
+  {
+    id: "nearby-2",
+    title: "Canal View Prinsengracht",
+    type: "Apartment",
+    price: 132,
+    city: {
+      name: "Amsterdam",
+      location: {
+        latitude: 52.37454,
+        longitude: 4.897976,
+        zoom: 16,
+      },
+    },
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
+      zoom: 16,
+    },
+    isFavorite: false,
+    isPremium: true,
+    rating: 4.9,
+    previewImage: "/img/apartment-02.jpg",
+  },
+  {
+    id: "nearby-3",
+    title: "Nice, cozy, warm big bed apartment",
+    type: "Apartment",
+    price: 180,
+    city: {
+      name: "Amsterdam",
+      location: {
+        latitude: 52.37454,
+        longitude: 4.897976,
+        zoom: 16,
+      },
+    },
+    location: {
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
+      zoom: 16,
+    },
+    isFavorite: true,
+    isPremium: true,
+    rating: 5.0,
+    previewImage: "/img/apartment-03.jpg",
+  },
+];
