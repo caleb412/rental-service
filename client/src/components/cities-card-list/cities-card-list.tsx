@@ -1,23 +1,31 @@
 import { OffersList } from "../../types/offer";
 import { CitiesCard } from "../cities-card/cities-card";
 
-type CitesCardListProps = {
+type CitiesCardListProps = {
   offersList: OffersList[];
+  onCardHover?: (offerId: string) => void;
+  onCardLeave?: () => void;
 };
 
-function CitiesCardList({ offersList }: CitesCardListProps) {
+function CitiesCardList({
+  offersList,
+  onCardHover,
+  onCardLeave,
+}: CitiesCardListProps) {
   return (
     <div className="cities__places-list places__list tabs__content">
-      {Array.from(offersList, (item) => (
+      {offersList.map((offer) => (
         <CitiesCard
-          key={item.id}
-          id={item.id}
-          title={item.title}
-          type={item.type}
-          price={item.price}
-          previewImage={item.previewImage}
-          isPremium={item.isPremium}
-          rating={item.rating}
+          key={offer.id}
+          id={offer.id}
+          title={offer.title}
+          type={offer.type}
+          price={offer.price}
+          isPremium={offer.isPremium}
+          previewImage={offer.previewImage}
+          rating={offer.rating}
+          onMouseEnter={onCardHover}
+          onMouseLeave={onCardLeave}
         />
       ))}
     </div>

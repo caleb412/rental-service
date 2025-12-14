@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { AppRoute } from "../../const";
 import { Link } from "react-router-dom";
 
@@ -10,6 +9,8 @@ type CitiesCardProps = {
   isPremium: boolean;
   previewImage: string;
   rating: number;
+  onMouseEnter?: (id: string) => void;
+  onMouseLeave?: () => void;
 };
 
 function CitiesCard({
@@ -20,17 +21,20 @@ function CitiesCard({
   previewImage,
   isPremium,
   rating,
+  onMouseEnter,
+  onMouseLeave,
 }: CitiesCardProps) {
-  const [, setOfferId] = useState("");
   return (
     <article
       className="cities__card place-card"
-      onMouseOver={() => setOfferId}
-      onMouseOut={() => setOfferId("")}
+      onMouseEnter={() => onMouseEnter?.(id)}
+      onMouseLeave={() => onMouseLeave?.()}
     >
-      <div className="place-card__mark">
-        <span>{isPremium}</span>
-      </div>
+      {isPremium && (
+        <div className="place-card__mark">
+          <span>Premium</span>
+        </div>
+      )}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`${AppRoute.Offer}/${id}`}>
           <img
@@ -57,13 +61,12 @@ function CitiesCard({
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: "80%" }}></span>
-            <span className="visually-hidden">{rating}</span>
+            <span style={{ width: `${(rating / 5) * 100}%` }}></span>
+            <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
           <a href="#">{title}</a>
-          <a href="#">{id}</a>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

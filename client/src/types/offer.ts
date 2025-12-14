@@ -1,9 +1,8 @@
-type OfferLocation = {
+export type OfferLocation = {
   latitude: number;
   longitude: number;
   zoom: number;
 };
-
 type CityOffer = {
   name: string;
   location: OfferLocation;

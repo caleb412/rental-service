@@ -1,5 +1,6 @@
-import { JSX } from "react";
+import { JSX, useState } from "react";
 import { Logo } from "../../components/logo/logo";
+import { Map } from "../../components/map/map";
 import { CitiesCardList } from "../../components/cities-card-list/cities-card-list";
 import { OffersList } from "../../types/offer";
 
@@ -12,6 +13,26 @@ function MainPage({
   rentalOffersCount,
   offersList,
 }: MainPageProps): JSX.Element {
+  const [activeOfferId, setActiveOfferId] = useState<string | null>(null);
+  const amsterdamOffers = offersList.filter(
+    (offer) => offer.city.name === "Amsterdam"
+  );
+
+  const amsterdamCity = {
+    name: "Amsterdam",
+    location: {
+      latitude: 52.37454,
+      longitude: 4.897976,
+      zoom: 12,
+    },
+  };
+
+  const mapPoints = amsterdamOffers.map((offer) => ({
+    id: offer.id,
+    latitude: offer.location.latitude,
+    longitude: offer.location.longitude,
+  }));
+
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -114,10 +135,18 @@ function MainPage({
                   </li>
                 </ul>
               </form>
-              <CitiesCardList offersList={offersList} />
+              <CitiesCardList
+                offersList={offersList}
+                onCardHover={setActiveOfferId}
+                onCardLeave={() => setActiveOfferId(null)}
+              />
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map
+                city={amsterdamCity}
+                points={mapPoints}
+                selectedPointId={activeOfferId}
+              />
             </div>
           </div>
         </div>
