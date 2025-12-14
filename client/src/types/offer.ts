@@ -1,3 +1,4 @@
+import { Review } from "./review";
 export type OfferLocation = {
   latitude: number;
   longitude: number;
@@ -30,6 +31,7 @@ export type FullOffer = {
   host: HostOffer;
   images: string[];
   maxAdults: number;
+  reviews?: Review[];
 };
 
 export type OffersList = {
