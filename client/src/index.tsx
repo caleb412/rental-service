@@ -5,6 +5,8 @@ import { Setting } from "./const";
 import { offers } from "./mocks/offers";
 import { offersList } from "./mocks/offers-list";
 import { favorites } from "./mocks/favorites";
+import { store } from "./store";
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,11 +14,13 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App
-      rentalOffersCount={Setting.rentOffersCount}
-      offersList={offersList}
-      offers={offers}
-      favorites={favorites}
-    />
+    <Provider store={store}>
+      <App
+        rentalOffersCount={Setting.rentOffersCount}
+        offersList={offersList}
+        offers={offers}
+        favorites={favorites}
+      />
+    </Provider>
   </React.StrictMode>
 );
