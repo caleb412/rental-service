@@ -25,7 +25,6 @@ type MapProps = {
 };
 
 const createIcon = (isActive: boolean = false) => {
-  // Use your local pin.svg and pin-active.svg files
   const iconUrl = isActive ? "/img/pin-active.svg" : "/img/pin.svg";
 
   return L.icon({
