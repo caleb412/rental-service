@@ -1,5 +1,6 @@
 import { CityOffer, OffersList } from "../src/types/offer";
-import { CITIES_LOCATION } from "../src/const";
+import { CITIES_LOCATION, SortOffersType } from "../src/const";
+import { SortOffer } from "./types/sort";
 
 export function getCity(
   cityName: string,
@@ -35,4 +36,20 @@ export function getOffersByCity(
   return offers.filter(
     (offer) => offer.city.name.toLowerCase().trim() === cityNameLower
   );
+}
+
+export function sortOffersByType(
+  offers: OffersList[],
+  type: SortOffer
+): OffersList[] {
+  switch (type) {
+    case SortOffersType.PriceToHigh:
+      return offers.sort((a, b) => a.price - b.price);
+    case SortOffersType.PriceToLow:
+      return offers.sort((a, b) => b.price - a.price);
+    case SortOffersType.TopRated:
+      return offers.sort((a, b) => b.rating - a.rating);
+    default:
+      return offers;
+  }
 }

@@ -6,6 +6,8 @@ import { useAppSelector } from "../../hooks";
 import { getOffersByCity } from "../../utils";
 import { OffersList } from "../../types/offer";
 import { CitiesList } from "../../components/cities-list/cities-list";
+import { SortOffer } from "../../types/sort";
+import { SortOptions } from "../../components/sort-options/sort-options";
 
 function MainPage() {
   const selectedCity = useAppSelector((state) => state.city);
@@ -16,6 +18,7 @@ function MainPage() {
   const [selectedOffer, setSelectedOffer] = useState<OffersList | undefined>(
     undefined
   );
+  const [activeSort, setActiveSort] = useState<SortOffer>("Popular");
   const handleListItemHover = (offerId: string) => {
     const currentOffer = offersList.find((offer) => offer.id === offerId);
     setSelectedOffer(currentOffer);
@@ -74,32 +77,10 @@ function MainPage() {
               <b className="places__found">
                 {rentalOffersCount} places to stay in {selectedCity?.name}
               </b>
-              <form className="places__sorting" action="#" method="get">
-                <span className="places__sorting-caption">Sort by</span>
-                <span className="places__sorting-type" tabIndex={0}>
-                  Popular
-                  <svg className="places__sorting-arrow" width="7" height="4">
-                    <use href="#icon-arrow-select"></use>
-                  </svg>
-                </span>
-                <ul className="places__options places__options--custom places__options--opened">
-                  <li
-                    className="places__option places__option--active"
-                    tabIndex={0}
-                  >
-                    Popular
-                  </li>
-                  <li className="places__option" tabIndex={0}>
-                    Price: low to high
-                  </li>
-                  <li className="places__option" tabIndex={0}>
-                    Price: high to low
-                  </li>
-                  <li className="places__option" tabIndex={0}>
-                    Top rated first
-                  </li>
-                </ul>
-              </form>
+              <SortOptions
+                activeSorting={activeSort}
+                onChange={(newSorting) => setActiveSort(newSorting)}
+              />
               <CitiesCardList
                 offersList={offersList}
                 onCardHover={handleListItemHover}
