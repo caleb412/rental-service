@@ -1,4 +1,4 @@
-import { CityOffer } from "../src/types/offer";
+import { CityOffer, OffersList } from "../src/types/offer";
 import { CITIES_LOCATION } from "../src/const";
 
 export function getCity(
@@ -21,4 +21,18 @@ export function getCity(
       zoom: foundCity.location.zoom,
     },
   };
+}
+export function getOffersByCity(
+  cityName: string,
+  offers: OffersList[]
+): OffersList[] {
+  if (!cityName || !offers || !Array.isArray(offers)) {
+    return [];
+  }
+
+  const cityNameLower = cityName.toLowerCase().trim();
+
+  return offers.filter(
+    (offer) => offer.city.name.toLowerCase().trim() === cityNameLower
+  );
 }

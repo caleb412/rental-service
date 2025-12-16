@@ -75,7 +75,7 @@ function Map({ city, points, selectedPointId, height = "100%" }: MapProps) {
 
       markersRef.current.push(marker);
     });
-  });
+  }, [points, selectedPointId]);
 
   return <div ref={mapRef} className="cities__map map" style={{ height }} />;
 }
