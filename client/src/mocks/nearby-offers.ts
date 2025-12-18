@@ -2,62 +2,63 @@ import { OffersList } from "../types/offer";
 
 export const mockNearbyOffers: OffersList[] = [
   {
-    id: "nearby-1",
-    title: "Wood and stone place",
-    type: "Private room",
-    price: 80,
+    id: "bbb06b0e-3g92-446d-9a68-cb64b5d38e2b",
+    title: "Sea Loft",
+    type: "private room",
+    price: 380,
     city: {
       name: "Amsterdam",
       location: {
-        latitude: 52.3609553943508,
-        longitude: 4.85309666406198,
-        zoom: 16,
+        latitude: 52.37454,
+        longitude: 4.897976,
+        zoom: 12,
       },
     },
     location: {
-      latitude: 52.3609553943508,
-      longitude: 4.85309666406198,
+      latitude: 52.374444,
+      longitude: 4.8825,
       zoom: 16,
     },
     isFavorite: true,
     isPremium: false,
-    rating: 4.2,
-    previewImage: "/img/room.jpg",
-  },
-  {
-    id: "nearby-2",
-    title: "Canal View Prinsengracht",
-    type: "Apartment",
-    price: 132,
-    city: {
-      name: "Amsterdam",
-      location: {
-        latitude: 52.37454,
-        longitude: 4.897976,
-        zoom: 16,
-      },
-    },
-    location: {
-      latitude: 52.3909553943508,
-      longitude: 4.929309666406198,
-      zoom: 16,
-    },
-    isFavorite: false,
-    isPremium: true,
     rating: 4.9,
     previewImage: "/img/apartment-02.jpg",
   },
+
   {
-    id: "nearby-3",
-    title: "Nice, cozy, warm big bed apartment",
-    type: "Apartment",
-    price: 180,
+    id: "bbb06b0e-3g52-446d-92a68-cb64b5d38e2b",
+    title: "Boldom Barn",
+    type: "apartment",
+    price: 330,
     city: {
       name: "Amsterdam",
       location: {
         latitude: 52.37454,
         longitude: 4.897976,
-        zoom: 16,
+        zoom: 12,
+      },
+    },
+    location: {
+      latitude: 52.378887,
+      longitude: 4.9,
+      zoom: 16,
+    },
+    isFavorite: true,
+    isPremium: false,
+    rating: 4.9,
+    previewImage: "/img/apartment-01.jpg",
+  },
+  {
+    id: "bbb0b9o-3g91-446d-9a68-cb64b5d38e2b",
+    title: "Jordan House",
+    type: "apartment",
+    price: 380,
+    city: {
+      name: "Amsterdam",
+      location: {
+        latitude: 52.37454,
+        longitude: 4.897976,
+        zoom: 12,
       },
     },
     location: {
@@ -66,8 +67,8 @@ export const mockNearbyOffers: OffersList[] = [
       zoom: 16,
     },
     isFavorite: true,
-    isPremium: true,
-    rating: 5.0,
+    isPremium: false,
+    rating: 4.2,
     previewImage: "/img/apartment-03.jpg",
   },
 ];

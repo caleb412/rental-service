@@ -2,12 +2,12 @@ import { FavoriteOffer } from "../types/offer";
 
 const favorites: FavoriteOffer[] = [
   {
-    id: "1",
-    title: "Nice, cozy, warm big bed apartment",
-    type: "Apartment",
-    price: 180,
+    id: "bbb06a0e-3f92-446d-9a68-cb64b5d38e2b",
+    title: "Cozy Apartment",
+    type: "apartment",
+    price: 370,
     isPremium: true,
-    rating: 5,
+    rating: 4.9,
     city: "Amsterdam",
     image: "/img/apartment-small-03.jpg",
     isFavorite: true,

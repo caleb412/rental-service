@@ -20,7 +20,7 @@ export const offersList: OffersList[] = [
       longitude: 4.9,
       zoom: 16,
     },
-    isPremium: false,
+    isPremium: true,
     isFavorite: true,
     rating: 4.9,
   },
@@ -28,7 +28,7 @@ export const offersList: OffersList[] = [
   {
     id: "bbb06b0e-3g92-446d-9a68-cb64b5d38e2b",
     title: "Sea Loft",
-    type: "apartment",
+    type: "private room",
     price: 380,
     previewImage: "/img/apartment-02.jpg",
     city: {
@@ -69,10 +69,10 @@ export const offersList: OffersList[] = [
     },
     isPremium: false,
     isFavorite: true,
-    rating: 3,
+    rating: 4.9,
   },
   {
-    id: "bbb0b9o-3g92-446d-9a68-cb64b5d38e2b",
+    id: "bbb0b9o-3g91-446d-9a68-cb64b5d38e2b",
     title: "Jordan House",
     type: "apartment",
     price: 380,
@@ -93,5 +93,28 @@ export const offersList: OffersList[] = [
     isPremium: false,
     isFavorite: true,
     rating: 4.2,
+  },
+  {
+    id: "bda09a1e-1032-448f-9b9a-cb64b5aas913b",
+    title: "Friendly studio apartment",
+    type: "apartment",
+    price: 360,
+    previewImage: "/img/apartment-03.jpg",
+    city: {
+      name: "Hamburg",
+      location: {
+        latitude: 53.5488,
+        longitude: 9.9872,
+        zoom: 12,
+      },
+    },
+    location: {
+      latitude: 53.5488,
+      longitude: 9.9872,
+      zoom: 16,
+    },
+    isPremium: false,
+    isFavorite: true,
+    rating: 4.7,
   },
 ];

@@ -57,23 +57,23 @@ const offers: FullOffer[] = [
   },
 
   {
-    id: "cab06a0e-8912-446f-9a68-cb64b5adsfa82b",
-    title: "Loft apartment",
+    id: "bbb0b9o-3g91-446d-9a68-cb64b5d38e2b",
+    title: "Jordan House",
     description:
       "Overlooking the city. Two floors of comfort. Perfect for lovers",
     type: "apartment",
-    price: 500,
+    price: 380,
     images: [
-      "/img/balcony-apartment.jpg",
+      "/img/apartment-03.jpg",
       "/img/apartment-01.jpg",
       "/img/apartment-02.jpg",
     ],
     city: {
-      name: "Cologne",
+      name: "Amsterdam",
       location: {
-        latitude: 52.3909553943508,
-        longitude: 4.929309666406198,
-        zoom: 16,
+        latitude: 52.37454,
+        longitude: 4.897976,
+        zoom: 12,
       },
     },
     location: {
@@ -102,34 +102,34 @@ const offers: FullOffer[] = [
     },
     isPremium: false,
     isFavorite: true,
-    rating: 4.5,
+    rating: 4.2,
     bedrooms: 1,
     maxAdults: 2,
   },
 
   {
-    id: "aec06a0e-1012-446f-9b91-cb64b5aaf913b",
-    title: "Modern Apartment",
+    id: "bbb06b0e-3g92-446d-9a68-cb64b5d38e2b",
+    title: "Sea Loft",
     description:
       "A perfect apartment. Two floors, convenient living. Perfect for bachelors",
-    type: "apartment",
+    type: "private room",
     price: 380,
     images: [
-      "/img/basement-apartment.jpg",
+      "/img/apartment-02.jpg",
       "/img/cozy-bathroom.jpg",
       "/img/cozy-bedroom.jpg",
     ],
     city: {
-      name: "Brussels",
+      name: "Amsterdam",
       location: {
-        latitude: 50.8477,
-        longitude: 4.3572,
-        zoom: 16,
+        latitude: 52.37454,
+        longitude: 4.897976,
+        zoom: 12,
       },
     },
     location: {
-      latitude: 50.84765231,
-      longitude: 4.3571931,
+      latitude: 52.374444,
+      longitude: 4.8825,
       zoom: 16,
     },
     goods: [
@@ -160,24 +160,28 @@ const offers: FullOffer[] = [
   },
 
   {
-    id: "cab06a0e-8912-446f-9a68-cb64b5adsfa82b",
-    title: "Loft apartment",
+    id: "bbb06b0e-3g52-446d-92a68-cb64b5d38e2b",
+    title: "Boldom Barn",
     description:
       "Overlooking the city. Two floors of comfort. Perfect for lovers",
     type: "apartment",
-    price: 500,
-    images: ["balcony-apartment.jpg", "cozy-bathroom.jpg", "cozy-bedroom.jpg"],
+    price: 330,
+    images: [
+      "/img/balcony-apartment.jpg",
+      "/img/cozy-bathroom.jpg",
+      "/img/cozy-bedroom.jpg",
+    ],
     city: {
       name: "Amsterdam",
       location: {
-        latitude: 52.3676,
-        longitude: 4.9041,
-        zoom: 16,
+        latitude: 52.37454,
+        longitude: 4.897976,
+        zoom: 12,
       },
     },
     location: {
-      latitude: 52.374,
-      longitude: 4.88969,
+      latitude: 52.378887,
+      longitude: 4.9,
       zoom: 16,
     },
     goods: [
@@ -197,11 +201,11 @@ const offers: FullOffer[] = [
     host: {
       isPro: true,
       name: "Olya",
-      avatarUrl: "avatar-angelina.jpg",
+      avatarUrl: "/img/avatar-angelina.jpg",
     },
     isPremium: false,
     isFavorite: true,
-    rating: 4.5,
+    rating: 4.9,
     bedrooms: 1,
     maxAdults: 2,
   },
@@ -213,13 +217,17 @@ const offers: FullOffer[] = [
       "A studio apartment far from the hustle and bustle of main London. Fully furnished and cozy.",
     type: "apartment",
     price: 360,
-    images: ["studio.jpg", "studio-photos.jpg"],
+    images: [
+      "/img/apartment-03.jpg",
+      "./img/studio.jpg",
+      "/img/studio-photos.jpg",
+    ],
     city: {
       name: "Hamburg",
       location: {
         latitude: 53.5488,
         longitude: 9.9872,
-        zoom: 16,
+        zoom: 12,
       },
     },
     location: {
@@ -244,7 +252,7 @@ const offers: FullOffer[] = [
     host: {
       isPro: true,
       name: "Natalie",
-      avatarUrl: "avatar-angelina.jpg",
+      avatarUrl: "/img/avatar-angelina.jpg",
     },
     isPremium: false,
     isFavorite: true,

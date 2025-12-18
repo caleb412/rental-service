@@ -49,7 +49,7 @@ function FavoriteCard({ offer, onFavoriteClick }: FavoriteCardProps) {
             onClick={handleFavoriteClick}
           >
             <svg className="place-card__bookmark-icon" width="18" height="19">
-              <use href="#icon-bookmark"></use>
+              <use href="/img/icon-bookmark.svg"></use>
             </svg>
             <span className="visually-hidden">
               {isFavorite ? "In bookmarks" : "To bookmarks"}
