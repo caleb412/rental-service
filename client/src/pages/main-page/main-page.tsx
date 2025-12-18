@@ -3,7 +3,7 @@ import { Logo } from "../../components/logo/logo";
 import { Map } from "../../components/map/map";
 import { CitiesCardList } from "../../components/cities-card-list/cities-card-list";
 import { useAppSelector } from "../../hooks";
-import { getOffersByCity } from "../../utils";
+import { getOffersByCity, sortOffersByType } from "../../utils";
 import { OffersList } from "../../types/offer";
 import { CitiesList } from "../../components/cities-list/cities-list";
 import { SortOffer } from "../../types/sort";
@@ -82,7 +82,7 @@ function MainPage() {
                 onChange={(newSorting) => setActiveSort(newSorting)}
               />
               <CitiesCardList
-                offersList={offersList}
+                offersList={sortOffersByType(selectedCityOffers, activeSort)}
                 onCardHover={handleListItemHover}
               />
             </section>
