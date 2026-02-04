@@ -38,4 +38,4 @@ User.init({
     tableName: 'users',
 });
     
-export  {User};
+export {User};

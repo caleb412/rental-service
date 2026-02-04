@@ -1,6 +1,6 @@
 import {Model, DataTypes} from 'sequelize';
 import sequelize from '../config/database.js';
-import User from './user.js';
+import {User} from './user.js';
 
 class Offer extends Model{}
 
@@ -91,7 +91,7 @@ Offer.init({
     },
     latitude:{
         type:DataTypes.FLOAT,
-        allowNull:FontFaceSetLoadEvent
+        allowNull: false
     },
     longitude:{
         type:DataTypes.FLOAT,
