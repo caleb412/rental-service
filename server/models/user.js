@@ -34,7 +34,8 @@ User.init({
     }
 },{
     sequelize,
-    modelName: 'user'
+    modelName: 'User',
+    tableName: 'users',
 });
     
 export  {User};
