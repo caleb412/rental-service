@@ -2,6 +2,7 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 import sequelize from './config/database.js';
 import cors from 'cors';
+import router from './routes/index.js';
 
 dotenv.config();
 
@@ -9,6 +10,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
+app.use('/',router);
 app.use(cors());
 app.use(express.json());  
 
