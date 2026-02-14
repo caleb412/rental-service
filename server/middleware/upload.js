@@ -10,10 +10,12 @@ const __dirname = path.dirname(__filename);
 //Path to the image folder
 const staticDir = path.resolve(__dirname, '..', 'static');
 
+//Create folder if not found
 if (!fs.existsSync(staticDir)){
     fs.mkdirSync(staticDir);
 }
 
+//Configuring the file storage
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, staticDir),
     filename: (req, file, cb) => {
