@@ -1,10 +1,10 @@
 import {Model, DataTypes} from 'sequelize';
 import sequelize from '../config/database.js';
-import {User} from './user.js';
-import {Offer} from './offer.js';
+import { User } from './user.js';
+import { Offer } from './offer.js';
+
 
 class Review extends Model{}
-
 Review.init({
     text:{
         type: DataTypes.STRING,
@@ -25,9 +25,9 @@ Review.init({
         sequelize,
         modelName:'Review',
         tableName: 'reviews'
-    });
-Review.belongsTo(User,{as: 'author', foreignKey:{allowNull:false}});
-Review.belongsTo(Offer,{foreignKey:{allowNull:false}
 });
 
+
+Review.belongsTo(User, {as: 'author', foreignKey: {allowNull: false} });
+Review.belongsTo(Offer,{foreignKey: {allowNull: false}});
 export {Review};

@@ -1,5 +1,7 @@
 import {Model, DataTypes} from 'sequelize';
 import sequelize from '../config/database.js';
+import { Review } from './review.js';
+import { Offer } from './offer.js';
 
 class User extends Model{}
 
@@ -37,5 +39,6 @@ User.init({
     modelName: 'User',
     tableName: 'users',
 });
-    
+
+
 export {User};
