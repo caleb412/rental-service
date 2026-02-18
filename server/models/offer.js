@@ -1,7 +1,6 @@
 import {Model, DataTypes} from 'sequelize';
 import sequelize from '../config/database.js';
-import {User} from './user.js';
-import { Review } from './review.js';
+
 
 class Offer extends Model{}
 
@@ -105,7 +104,6 @@ Offer.init({
     
 });
 
-Offer.belongsTo(User, {as:'author',foreignKey:'authorId'});
 
 
 export {Offer};

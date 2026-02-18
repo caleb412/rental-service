@@ -5,6 +5,7 @@ import cors from 'cors';
 import {router} from './routes/index.js';
 import errorMiddleware from './middleware/ErrorHandlingMiddleware.js'
 import {fileURLToPath} from 'url'
+import './models/associations.js'
 import path from 'path'
 
 const __filename = fileURLToPath(import.meta.url);
