@@ -1,7 +1,7 @@
 import { Review } from "../models/review.js";
 import { User } from "../models/user.js";
 import ApiError from "../error/ApiError.js";
-
+import { adaptReviewToClient } from "../adapters/reviewAdapter.js";
 
 const addReview = async (req, res, next) =>{
   try{
@@ -25,26 +25,24 @@ const addReview = async (req, res, next) =>{
     console.error(error);
     next(ApiError.badRequest('Ошибка при добавлении комментария'));
   }
-}
+};
 
-export async function getOfferReviews(req, res, next) {
-  try {
-    const { id } = req.params;
-
+const getReviewsByOfferId = async (req, res, next) => {
+  try{
     const reviews = await Review.findAll({
-      where: { OfferId: id },
-      include: {
-        model: User,
-        as: 'author'
-      },
-      order: [['publishDate', 'DESC']]
+      where: {OfferId: req.params.offerId},
+      include: {model: User, as: 'author'},
+      order: [['publishDate','DESC']]
     });
 
-    return res.json(reviews);
+    const adaptedReviews = reviews.map(adaptReviewToClient);
+    res.json(adaptedReviews);
 
-  } catch (error) {
-    next(ApiError.internal('Failed to load reviews'));
+  } catch (error){
+    console.error(error);
+    next(ApiError.internal('Ошибка при добавлении комментариев'));
+
   }
-}
+};
 
-export {addReview};
+export {addReview, getReviewsByOfferId};

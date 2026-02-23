@@ -1,4 +1,4 @@
-import { parse } from "dotenv";
+
 
 const getBaseUrl = () => `${process.env.HOST}:${process.env.PORT ||
 5000}`;
