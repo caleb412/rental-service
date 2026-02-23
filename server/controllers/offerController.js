@@ -103,4 +103,34 @@ export async function createOffer(req, res, next){
     }
 }
 
-export {getAllOffers};
+const getFavoriteOffers = async (req, res, next) => {
+    try{
+        const offers = await Offer.findAll ({
+            where: {isFavorite: true}
+        });
+
+        return res.json(offers);
+    }catch (error){
+        next(ApiError.internal('Ошибка получения избранных предложений: '+ error.message));
+    }
+}
+
+const toggleFavorite = async (req, res, next) => {
+    try{
+        const {offerId, status} = req.params;
+
+        const offer = await Offer.findByPk(offerId);
+        if (!offer){
+            return next(ApiError.notFound('Предложение не найдено'));
+        }
+
+        offer.isFavorite = status === '1';
+        await offer.save();
+
+        res.json(offer);
+    }catch (error){
+        next(ApiError.internal('Ошибка при обновлении статуса избранного'));
+    }
+}
+
+export {getAllOffers, getFavoriteOffers, toggleFavorite};
