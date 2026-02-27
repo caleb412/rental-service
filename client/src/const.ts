@@ -10,12 +10,18 @@ const AppRoute = {
   Offer: "/offer",
 } as const;
 
+const APIRoute = {
+  Offers: '/offers',
+  Login: '/login',
+  Logout: '/logout',
+}
 const AuthorizationStatus = {
   Auth: "AUTH",
   NoAuth: "NO_AUTH",
-  Unkown: "UNKNOWN",
+  Unknown: "UNKNOWN",
 };
 
+const TIMEOUT_SHOW_ERROR = 200;
 const CITIES_LOCATION: CityOffer[] = [
   {
     name: "Paris",
@@ -80,4 +86,6 @@ export {
   AuthorizationStatus,
   CITIES_LOCATION,
   SortOffersType,
+  APIRoute,
+  TIMEOUT_SHOW_ERROR
 };

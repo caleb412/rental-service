@@ -11,6 +11,8 @@ import { AppRoute, AuthorizationStatus } from "../../const";
 import { PrivateRoute } from "../private-route/private-route";
 import { FavoriteOffer, FullOffer } from "../../types/offer";
 import { OffersList } from "../../types/offer";
+import { useAppSelector } from "../../hooks";
+import { LoadingPage } from "../loading-page/loading-page";
 
 type AppMainPageProps = {
   rentalOffersCount: number;
@@ -25,6 +27,14 @@ function App({
   offers,
   favorites,
 }: AppMainPageProps): JSX.Element {
+  const authorizationStatus = useAppSelector((state) => state.authorizationStatus);
+  const isQuestionsDataLoading = useAppSelector((state) => state.isOffersDataLoading);
+
+  if (authorizationStatus === AuthorizationStatus.Unknown || isQuestionsDataLoading){
+    return (
+      <LoadingPage/>
+    )
+  }
   return (
     <BrowserRouter>
       <Routes>
@@ -40,7 +50,7 @@ function App({
         <Route
           path={AppRoute.Favorites}
           element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.Auth}>
+            <PrivateRoute authorizationStatus={authorizationStatus}>
               <FavoritesPage favorites={favorites} />
             </PrivateRoute>
           }
