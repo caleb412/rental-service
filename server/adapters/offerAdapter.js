@@ -69,7 +69,7 @@ const adaptOfferToClient = (offer) => {
     let previewImage = offer.previewImage;
 
     if (previewImage && !previewImage.startsWith('http')) {
-        previewImage = `${baseUrl}${previewImage.startsWith('/') ? '' : '/'}${previewImage}}`;
+        previewImage = `${baseUrl}${previewImage.startsWith('/') ? '' : '/'}${previewImage}`;
     }
 
     return {

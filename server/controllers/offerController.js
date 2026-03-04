@@ -37,7 +37,7 @@ export async function getFullOffer(req, res, next){
         //отправить ответ
         return res.json(adapted);
     }catch(error){
-        next(ApiError.internal("Не удалось получить предложение: " + error.message ))
+        next(ApiError.internal("Не удалось получить предложение: "))
 
     }
 }
