@@ -40,7 +40,7 @@ export const registration = async (req, res, next) => {
         });
 
     } catch (error) {
-        next(ApiError.internal('Ошибка регистрации' + error.message));
+        next(ApiError.internal('Ошибка регистрации'));
     }
 }
 

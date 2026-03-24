@@ -50,7 +50,7 @@ function App({
         <Route
           path={AppRoute.Favorites}
           element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+            <PrivateRoute authorizationStatus={authorizationStatus}>
               <FavoritesPage favorites={favorites} />
             </PrivateRoute>
           }
